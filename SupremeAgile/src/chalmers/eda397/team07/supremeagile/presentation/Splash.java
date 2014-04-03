@@ -25,8 +25,8 @@ public class Splash extends Activity {
 					sleep(5000);
 					
 					// TODO load some stuff here
-					SAContext.username = "DanielDHuynh";
-					SAContext.password = "hanhduy0104";
+					SAContext.username = "XXX";//<--Type here bitch
+					SAContext.password = "YYY";//<--Type here bitch
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				} finally {
