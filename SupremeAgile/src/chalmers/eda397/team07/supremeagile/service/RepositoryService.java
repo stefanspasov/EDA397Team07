@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import chalmers.eda397.team07.supremeagile.common.Constants;
 import chalmers.eda397.team07.supremeagile.common.Repository;
 import chalmers.eda397.team07.supremeagile.common.SAContext;
+import chalmers.eda397.team07.supremeagile.serviceInterface.IRepositoryService;
 
 public class RepositoryService implements IRepositoryService {
 	private static String OWN_REPOS_URL = "/users/:user/repos";

@@ -2,11 +2,11 @@ package chalmers.eda397.team07.supremeagile.presentation;
 
 import chalmers.eda397.team07.supremeagile.R;
 import chalmers.eda397.team07.supremeagile.common.SAContext;
+import chalmers.eda397.team07.supremeagile.serviceInterface.ServiceLocator;
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.StrictMode;
 
 public class Splash extends Activity {
 	MediaPlayer startSong;
@@ -25,6 +25,7 @@ public class Splash extends Activity {
 					sleep(5000);
 					
 					// TODO load some stuff here
+					ServiceLocator.registerServices();
 					SAContext.username = "XXX";//<--Type here bitch
 					SAContext.password = "YYY";//<--Type here bitch
 				} catch (InterruptedException e) {

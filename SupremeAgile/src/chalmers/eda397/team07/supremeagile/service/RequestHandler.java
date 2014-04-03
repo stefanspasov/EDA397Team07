@@ -30,7 +30,6 @@ public class RequestHandler {
 			url = new URL(targetURL);
 			connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod(requestMethod.toString());
-			// TODO The normal authorisation does not work on Android.
 			connection.setRequestProperty("Authorization", "Basic "
 					+ authStringEnc);
 

@@ -5,11 +5,10 @@ import java.util.List;
 
 import chalmers.eda397.team07.supremeagile.common.NetworkUtils;
 import chalmers.eda397.team07.supremeagile.common.Repository;
-import chalmers.eda397.team07.supremeagile.service.IRepositoryService;
-import chalmers.eda397.team07.supremeagile.service.RepositoryService;
+import chalmers.eda397.team07.supremeagile.serviceInterface.IRepositoryService;
+import chalmers.eda397.team07.supremeagile.serviceInterface.ServiceLocator;
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.widget.ArrayAdapter;
 
 public class RepositoryActivity extends ListActivity {
@@ -19,10 +18,15 @@ public class RepositoryActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		repoService = new RepositoryService();
-
 		// Avoid android.os.NetworkOnMainThreadException
 		NetworkUtils.permitAllThreadPolicy();
+		
+		// Setup internal services
+		try {
+			repoService = ServiceLocator.getService(IRepositoryService.class);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		try {
 			Repository[] repos = repoService.getOwnRepositories();
